@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Erdi - Portfolio</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../navigation-bar.js"></script>
+</head>
+<body>
+    <span class="background center-text">
+        <spoiler class="hidden">
+            <button class="spoil" name="NodeJS"></button>
+            <content>
+                <span>
+                    <h1>TextToBin</h1>
+                    <p>
+                        TextToBin is an NPM module and CLI tool for converting text to binary.<br>
+                        Check it out <a href="https://www.npmjs.com/package/texttobin">here</a>
+                    </p>
+                </span>
+                <br>
+                <span>
+                    <h1>BinToText</h1>
+                    <p>
+                        BinToText is a simple Node module for converting binary to ASCII text.
+                        Check it out <a href="https://www.npmjs.com/package/bintotext">here</a>
+                    </p>
+                </span>
+                <br>
+                <span>
+                    <h1>RDit</h1>
+                    <p>
+                        RDit is a simple Node module for browsing Reddit.<br>
+                        Check it out <a href="https://www.npmjs.com/package/rdit">here</a>
+                    </p>
+                </span><!--https://www.npmjs.com/package/js-clamp-->
+                <br>
+                <span>
+                    <h1>JS Clamp</h1>
+                    <p>
+                        JS Clamp is simple NodeJS module that clamps a number between two other numbers.<br>
+                        Check it out <a href="https://www.npmjs.com/package/js-clamp">here</a>
+                    </p>
+                </span>
+                <br>
+                <span>
+                    <h1>JS BrainF*ck</h1>
+                    <p>
+                        JS BrainF*ck is a simple <a href="https://en.wikipedia.org/wiki/Brainfuck">BrainF*ck</a> interpreter.<br>
+                        Check it out <a href="https://www.npmjs.com/package/js-brainfuck">here</a>
+                    </p>
+                </span>
+            </content>
+        </spoiler>
+    </span>
+
+    <script defer>
+        const spoilers = document.getElementsByTagName("spoiler");
+        for(const spoiler of spoilers) {
+            const button = spoiler.querySelector("button.spoil");
+            
+            button.onclick = () => spoiler.classList.toggle("hidden");
+        }
+    </script>
+</body>
+</html>

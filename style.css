@@ -1,0 +1,74 @@
+:root {
+    --primary-color: rgb(50, 50, 50);
+    --secondary-color: rgb(29, 29, 29);
+
+    --nav-size-no-hover: 1em;
+    --nav-size-hover: 1.1em;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+header.nav-bar {
+    display: block;
+    background-color: var(--secondary-color);
+    width: 100%;
+}
+
+header.nav-bar > a {
+    display: inline-block;
+    margin-left: 2rem;
+    text-decoration: none;
+    padding: 5px;
+    color: rgb(200, 200, 200);
+    font-size: var(--nav-size-no-hover);
+
+    transition: .5s;
+}
+
+header.nav-bar > a:hover {
+    font-size: var(--nav-size-hover);
+    color: white;
+}
+
+.background {
+    display: block;
+    background-color: var(--secondary-color);
+    margin: 5px;
+    padding: 10px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* button.spoil::before {
+    content: "Show Spoiler (";
+} */
+
+button.spoil::before {
+    content: "Hide [" attr(name) "]";
+}
+
+spoiler.hidden > button.spoil::before {
+    content: "Show [" attr(name) "]";
+}
+
+spoiler.hidden > content {
+    display: none;
+}
+
+spoiler > content {
+    display: block;
+    background-color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: aqua;
+}
+
+a:hover {
+    color: purple;
+}
