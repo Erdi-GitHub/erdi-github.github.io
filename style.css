@@ -6,8 +6,16 @@
     --nav-size-hover: 1.1em;
 }
 
+* {
+    color: white;
+}
+
 body {
     background-color: var(--primary-color);
+}
+
+button {
+    background-color: gray;
 }
 
 header.nav-bar {
