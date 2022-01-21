@@ -35,9 +35,11 @@ header.nav-bar > a {
     transition: .5s;
 }
 
-header.nav-bar > a:hover {
+header.nav-bar > a:hover,
+header.nav-bar > a:focus {
     font-size: var(--nav-size-hover);
     color: white;
+    outline: none;
 }
 
 .background {
@@ -58,10 +60,18 @@ header.nav-bar > a:hover {
 button.spoil {
     display: block;
     margin: 5px auto;
+    font-size: 125%;
+    transition: 0.5s;
 }
 
 button.spoil::before {
     content: "Hide [" attr(name) "]";
+}
+
+button.spoil:hover,
+button.spoil:focus {
+    font-size: 130%;
+    outline: none;
 }
 
 spoiler.hidden > button.spoil::before {
@@ -82,11 +92,38 @@ a {
     color: aqua;
 }
 
-a:hover {
+a:hover,
+a:focus {
     color: purple;
+    text-decoration: underline;
+    outline: none;
 }
 
 ul.programming-list > li {
     margin: 5px;
     padding: 10px;
+}
+
+@media only screen and (max-width: 992px) {
+    header.nav-bar > a,
+    header.nav-bar > a:hover,
+    header.nav-bar > a:focus {
+        display: flex;
+    }
+
+    header.nav-bar > a,
+    header.nav-bar > a:hover,
+    header.nav-bar > a:focus,
+    button.spoil {
+        transition: 0s;
+    }
+    
+    * {
+        font-size: 1.25em;
+    }
+
+    p,
+    a {
+        font-size: 1em;
+    }
 }
