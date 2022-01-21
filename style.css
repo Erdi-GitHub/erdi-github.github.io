@@ -28,7 +28,7 @@ header.nav-bar > a {
     display: inline-block;
     margin-left: 2rem;
     text-decoration: none;
-    padding: 5px;
+    padding: 10px;
     color: rgb(200, 200, 200);
     font-size: var(--nav-size-no-hover);
 
@@ -43,8 +43,8 @@ header.nav-bar > a:hover {
 .background {
     display: block;
     background-color: var(--secondary-color);
-    margin: 5px;
-    padding: 10px;
+    margin: 5px 0;
+    padding: 5px;
 }
 
 .center-text {
@@ -54,6 +54,11 @@ header.nav-bar > a:hover {
 /* button.spoil::before {
     content: "Show Spoiler (";
 } */
+
+button.spoil {
+    display: block;
+    margin: 5px auto;
+}
 
 button.spoil::before {
     content: "Hide [" attr(name) "]";
@@ -79,4 +84,9 @@ a {
 
 a:hover {
     color: purple;
+}
+
+ul.programming-list > li {
+    margin: 5px;
+    padding: 10px;
 }
