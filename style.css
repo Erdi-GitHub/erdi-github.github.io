@@ -104,6 +104,39 @@ ul.programming-list > li {
     padding: 10px;
 }
 
+div.text-anim {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: text-anim 2s forwards;
+}
+
+@keyframes text-anim {
+    0% {
+        transform: scale(0%, 100%);
+    }
+    25% {
+        transform: scale(-100%, 100%);
+    }
+    100% {
+        transform: scale(100%, 100%);
+    }
+}
+
+.text-space-anim {
+    display: block;
+    animation: text-space-anim 0.75s forwards;
+}
+
+@keyframes text-space-anim {
+    0% {
+        letter-spacing: 10em;
+    }
+    100% {
+        letter-spacing: 0em;
+    }
+}
+
 @media only screen and (max-width: 992px) {
     header.nav-bar > a,
     header.nav-bar > a:hover,
