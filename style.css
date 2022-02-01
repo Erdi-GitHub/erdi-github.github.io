@@ -130,7 +130,7 @@ div.text-anim {
 
 @keyframes text-space-anim {
     0% {
-        letter-spacing: 10em;
+        letter-spacing: 7.5em;
     }
     100% {
         letter-spacing: 0em;
@@ -138,6 +138,15 @@ div.text-anim {
 }
 
 @media only screen and (max-width: 992px) {
+    @keyframes text-space-anim {
+        0% {
+            letter-spacing: 2em;
+        }
+        100% {
+            letter-spacing: 0em;
+        }
+    }
+
     header.nav-bar > a,
     header.nav-bar > a:hover,
     header.nav-bar > a:focus {
