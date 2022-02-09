@@ -6,6 +6,7 @@
 
     for([pageName, href] of Object.entries(pages)) {
         const element = document.createElement("a");
+        
         element.href = href;
         element.innerText = pageName;
 
