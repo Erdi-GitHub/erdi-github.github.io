@@ -19,7 +19,7 @@
                     </p>
                 </span>
                 <br>
-                <span>
+                <span id="cps-counter">
                     <h1>CPS Counter</h1>
                     <p>
                         A simple CPS counter<br>
@@ -27,7 +27,7 @@
                     </p>
                 </span>
                 <br>
-                <span>
+                <span id="browser-ception">
                     <h1>Browser-Ception</h1>
                     <p>
                         A browser within a browser<br>
@@ -37,8 +37,15 @@
             </content>
         </spoiler>
         <spoiler class="hidden">
-            <button class="spoil" name="NodeJS"></button>
+            <button class="spoil" name="JavaScript (Node)"></button>
             <content>
+                <span id="wordle.js">
+                    <h1>wordle.js</h1>
+                    <p>
+                        wordle.js is a CLI <a href="https://en.wikipedia.org/wiki/Wordle">Wordle</a> clone entirely written in JavaScript<br> 
+                        Check it out <a href="https://www.npmjs.com/package/wordle.js">here</a>
+                    </p>
+                </span>
                 <span id="texttobin">
                     <h1>TextToBin</h1>
                     <p>
@@ -274,12 +281,29 @@
         </spoiler>
     </span>
 
-    <script defer>
+    <script>
         const spoilers = document.getElementsByTagName("spoiler");
         for(const spoiler of spoilers) {
             const button = spoiler.querySelector("button.spoil");
             
             button.onclick = () => spoiler.classList.toggle("hidden");
+        }
+    </script>
+
+    <script>
+        const hashElement = document.getElementById(document.location.hash.replace("#", ""));
+        const hashParent = hashElement.parentElement;
+
+        console.log(hashParent.tagName);
+
+        if(hashParent.tagName === "CONTENT") {
+            const spoiler = hashParent.parentElement;
+            spoiler.classList.remove("hidden");
+
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                window.scrollTo(0, hashElement.getBoundingClientRect().top)
+            }, 100);
         }
     </script>
 </body>

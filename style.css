@@ -64,10 +64,6 @@ button.spoil {
     transition: 0.5s;
 }
 
-button.spoil::before {
-    content: "Hide [" attr(name) "]";
-}
-
 button.spoil:hover,
 button.spoil:focus {
     font-size: 130%;
@@ -77,9 +73,19 @@ button.spoil:focus {
 spoiler.hidden > button.spoil::before {
     content: "Show [" attr(name) "]";
 }
+button.spoil::before {
+    content: "Hide [" attr(name) "]";
+}
+
+spoiler > content > span:focus {
+    display: block;
+}
 
 spoiler.hidden > content {
     display: none;
+}
+spoiler.hidden > content:focus {
+    display: block;
 }
 
 spoiler > content {
