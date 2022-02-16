@@ -84,9 +84,6 @@ spoiler > content > span:focus {
 spoiler.hidden > content {
     display: none;
 }
-spoiler.hidden > content:focus {
-    display: block;
-}
 
 spoiler > content {
     display: block;
