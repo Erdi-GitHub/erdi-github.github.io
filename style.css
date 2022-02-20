@@ -19,10 +19,10 @@ curtain {
 
     background-image: url("./curtain.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 200vmin;
 
-    width: 100%;
-    height: 200%;
+    width: 200vmin;
+    height: 200vmin;
 
     z-index: 1;
 
@@ -34,10 +34,15 @@ curtain {
 }
 
 @keyframes reveal-curtain {
-    from {
+    0% {
         left: 0;
-    } to {
-        left: -100%;
+    }
+    99% {
+        left: -200vmin;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 
