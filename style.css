@@ -30,7 +30,7 @@ curtain {
     left: 0;
 
     animation: reveal-curtain 1s forwards;
-    animation-delay: 0.1s;
+    animation-delay: 0.5s;
 }
 
 @keyframes reveal-curtain {
@@ -133,7 +133,17 @@ ul > li {
     margin: 5px;
     padding: 10px;
 
+    opacity: 0;
+
+    animation: fade-in 2s forwards;
+    animation-delay: 0.75s;
+}
+
+.fade-in {
+    opacity: 0;
+
     animation: fade-in 1s forwards;
+    animation-delay: 0.5s;
 }
 
 @keyframes fade-in {
@@ -165,30 +175,7 @@ div.text-anim {
     }
 }
 
-.text-space-anim {
-    display: block;
-    animation: text-space-anim 0.75s forwards;
-}
-
-@keyframes text-space-anim {
-    0% {
-        letter-spacing: 7.5em;
-    }
-    100% {
-        letter-spacing: 0em;
-    }
-}
-
 @media only screen and (max-width: 992px) {
-    @keyframes text-space-anim {
-        0% {
-            letter-spacing: 2em;
-        }
-        100% {
-            letter-spacing: 0em;
-        }
-    }
-
     header.nav-bar > a,
     header.nav-bar > a:hover,
     header.nav-bar > a:focus {
