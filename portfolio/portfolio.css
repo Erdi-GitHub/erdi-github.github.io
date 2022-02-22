@@ -11,8 +11,6 @@ portfolio > item {
     margin-top: 1em;
 
     transition: 1s;
-    
-    nav-index: 3;
 }
 
 portfolio > item::before {
@@ -42,6 +40,10 @@ portfolio > item:focus-within {
 portfolio > item:focus::before {
     background-color: rgb(200, 200, 200);
     text-decoration: underline;
+}
+
+portfolio > item::before {
+    cursor: pointer;
 }
 
 h2#click::before {

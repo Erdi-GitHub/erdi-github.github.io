@@ -286,28 +286,15 @@
     </portfolio>
 
     <script>
-        const spoilers = document.getElementsByTagName("spoiler");
-        for(const spoiler of spoilers) {
-            const button = spoiler.querySelector("button.spoil");
-            
-            button.onclick = () => spoiler.classList.toggle("hidden");
-        }
-    </script>
-
-    <script>
         const hashElement = document.getElementById(document.location.hash.replace("#", ""));
-        const hashParent = hashElement.parentElement;
 
-        console.log(hashParent.tagName);
+        if(hashElement) {
+            const hashParent = hashElement.parentElement;
 
-        if(hashParent.tagName === "CONTENT") {
-            const spoiler = hashParent.parentElement;
-            spoiler.classList.remove("hidden");
-
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-                window.scrollTo(0, hashElement.getBoundingClientRect().top)
-            }, 100);
+            if(hashParent.tagName === "CONTENT") {
+                hashParent.parentElement.focus();
+                hashElement.scrollIntoView({ behavior: "smooth" });
+            }
         }
     </script>
 </body>
