@@ -1,0 +1,68 @@
+portfolio {
+    text-align: center;
+}
+
+portfolio > item {
+    display: block;
+    overflow-y: hidden;
+
+    font-size: 2em;
+    height: 1em;
+    margin-top: 1em;
+
+    transition: 1s;
+    
+    nav-index: 3;
+}
+
+portfolio > item::before {
+    content: attr(topic);
+
+    position: absolute;
+
+    font-size: 1em;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--secondary-color);
+
+    width: 100%;
+
+    z-index: 1;
+}
+
+portfolio > item:focus,
+portfolio > item:focus-within {
+    height: 20em;
+    overflow-y: scroll;
+    outline: none;
+}
+
+portfolio > item:focus::before {
+    background-color: rgb(200, 200, 200);
+    text-decoration: underline;
+}
+
+h2#click::before {
+    content: "Click or tab to"
+}
+
+h2#click::after {
+    content: " any of the following categories to view them";
+}
+
+@media only screen and (max-width: 992px) {
+    h2#click::before {
+        content: "Tap";
+    }
+
+    portfolio > item {
+        font-size: 4em;
+        margin-top: 1.5em;
+    }
+
+    portfolio > item > content {
+        font-size: 1.125em;
+    }
+}
