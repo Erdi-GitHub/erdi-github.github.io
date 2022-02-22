@@ -12,6 +12,7 @@
 
 body {
     background-color: var(--primary-color);
+    overflow-x: hidden;
 }
 
 curtain {
@@ -38,11 +39,15 @@ curtain {
         left: 0;
     }
     99% {
+        top: 0;
         left: -200vmin;
         opacity: 1;
     }
     100% {
-        opacity: 0;
+        width: 0;
+        height: 0;
+        
+        display: none;
     }
 }
 
