@@ -37,9 +37,12 @@ portfolio > item:focus-within {
     outline: none;
 }
 
+portfolio > item:focus::before,
 portfolio > item:focus::before {
     background-color: rgb(200, 200, 200);
-    text-decoration: underline;
+    text-decoration: none;
+
+    color: black;
 }
 
 portfolio > item::before {

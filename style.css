@@ -67,14 +67,12 @@ header.nav-bar > a {
     text-decoration: none;
     padding: 10px;
     color: rgb(200, 200, 200);
-    font-size: var(--nav-size-no-hover);
 
     transition: .5s;
 }
 
 header.nav-bar > a:hover,
 header.nav-bar > a:focus {
-    font-size: var(--nav-size-hover);
     color: white;
     outline: none;
 }
@@ -129,14 +127,36 @@ spoiler > content {
 
 a {
     text-decoration: none;
+
     color: aqua;
+
+    position: relative;
 }
 
-a:hover,
-a:focus {
-    color: purple;
-    text-decoration: underline;
-    outline: none;
+a::before {
+    content: "";
+
+    position: absolute;
+
+    transition: .2s;
+
+    height: .1em;
+    width: 100%;
+
+    top: 100%;
+    left: 0;
+
+    background-color: aqua;
+
+    transform: scaleX(0);
+}
+
+a:hover::before,
+a:focus::before {
+    content: "";
+    display: block;
+    
+    transform: scaleX(100%);
 }
 
 ul > li {
