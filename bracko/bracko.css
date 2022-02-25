@@ -1,0 +1,71 @@
+span.frick-frack::before {
+    content: "frick";
+
+    opacity: 0;
+
+    animation: frick-frack-anim .2s forwards .3s;
+}
+
+span.frick-frack::after {
+    content: "frack";
+
+    opacity: 0;
+
+    animation: frick-frack-anim .2s forwards .6s;
+}
+
+.description {
+    font-size: 1.25em;
+}
+
+code {
+    background-color: black;
+    color: yellow;
+}
+
+pre.code {
+    display: block;
+    background-color: black;
+    overflow: scroll;
+    max-height: 22em;
+}
+
+pre.code > code {
+    color: white;
+}
+
+span.bracket {
+    color: orange;
+}
+
+span.value {
+    color: green;
+}
+
+span.object {
+    color: yellow;
+}
+
+span.comment {
+    color: gray;
+}
+
+@keyframes frick-frack-anim {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+#icon {
+    display: block; 
+    margin: auto;
+    width: 20em;
+}
+
+@media only screen and (max-width: 992px) {
+    #icon {
+        width: 10em;
+    }
+}

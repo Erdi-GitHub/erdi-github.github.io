@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bracko</title>
+
+    <link rel="shortcut icon" href="bracko.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="bracko.css">
+
+    <script src="../navigation-bar.js"></script>
+</head>
+<body>
+    <div class="background">
+        <img src="bracko.png" alt="Bracko Icon" draggable="false" id="icon">
+    </div>
+    <div class="background">
+        <h1 style="user-select: none;" class="center-text">What the <b><span class="frick-frack">-</span></b> is <a href="https://www.npmjs.com/package/bracko" draggable="false"><i>Bracko</i></a>?</h1>
+        <span class="description">
+            <b>Bracko</b> is a very easy-to-learn data format. Its <a href="#syntax">syntax</a> is essentially <code>[Key]: Value</code><br>
+            <br>
+            <b>Bracko</b>'s name comes from the word "bracket", because of its general syntax needing you to surround keys in <span class="bracket">[</span>brackets<span class="bracket">]</span>.
+            <br>
+            Bracko's file extension is <span class="value">.bracko</span>/<span class="value">.br</span>.<br>
+            <br>
+            A Bracko parser is available on <a href="https://www.npmjs.com/package/bracko">NPM</a>.
+        </span>
+        <h1 class="center-text" id="syntax">Syntax</h1>
+        <span class="description">
+            <pre class="code">
+<code>
+<span class="comment">General syntax</span>
+<span class="bracket">[</span>Key<span class="bracket">]</span>: <span class="value">value</span>
+
+<span class="comment">Anything that's not in the above syntax is treated as a comment</span>
+
+<span class="comment">Special characters are allowed in keys</span>
+<span class="bracket">[</span>John's birthday!<span class="bracket">]</span>: <span class="value">1st of January, 2000</span>
+
+<span class="comment">Objects/dictionaries</span>
+<span class="bracket">[</span>Person<span class="bracket">]</span>: <span class="object">-</span>
+    <span class="bracket">[</span>Name<span class="bracket">]</span>: <span class="value">John</span>
+    <span class="bracket">[</span>Surname<span class="bracket">]</span>: <span class="value">Doe</span>
+    <span class="bracket">[</span>Birthday<span class="bracket">]</span>: <span class="object">-</span>
+        <span class="bracket">[</span>Day<span class="bracket">]</span>: <span class="value">1</span>
+        <span class="bracket">[</span>Month<span class="bracket">]</span>: <span class="value">1</span>
+        <span class="bracket">[</span>Year<span class="bracket">]</span>: <span class="value">2000</span>
+    <span class="bracket">[</span>Birthday<span class="bracket">]</span>: <span class="object">-</span>
+<span class="bracket">[</span>Person<span class="bracket">]</span>: <span class="object">-</span>
+</code>
+</pre>
+    Parsed to a JS object, this Bracko data would be:
+    <pre class="code">
+<code>
+<span class="bracket">{</span>
+    <span class="object">Key</span>: <span class="value">"value"</span>,
+    <span class="object">"John's birthday!"</span>: <span class="value">"1st of January, 2000"</span>
+    <span class="object">Person</span>: <span class="bracket">{</span>
+        <span class="object">Name</span>: <span class="value">"John"</span>,
+        <span class="object">Surname</span>: <span class="value">"Doe"</span>,
+        <span class="object">Birthday</span>: <span class="bracket">{</span>
+            <span class="object">Day</span>: <span class="value">"1"</span>,
+            <span class="object">Month</span>: <span class="value">"1"</span>,
+            <span class="object">Year</span>: <span class="value">"2000"</span>
+        <span class="bracket">}</span>
+    <span class="bracket">}</span>
+<span class="bracket">}</span></code>
+    </pre>
+    </div>
+</body>
+</html>

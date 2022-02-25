@@ -1,4 +1,5 @@
 export const pages = {
     "Home": "/",
-    "My Portfolio": "/portfolio"
+    "My Portfolio": "/portfolio",
+    "Bracko": "/bracko"
 };
