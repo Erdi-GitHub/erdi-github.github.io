@@ -1,0 +1,66 @@
+* {
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+span.typing {
+    display: block;
+    position: relative;
+
+    font-size: 1.1em;
+}
+
+span.typing > span {
+    position: relative;
+
+    animation: show .35s forwards;
+}
+
+@keyframes show {
+    0% {
+        top: 0;
+    }
+    25% {
+        top: .25em;
+    }
+    50% {
+        top: -.25em;
+    }
+    75% {
+        top: .25em;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+div.border {
+    border-radius: 1em;
+    border-color: azure;
+    border-style: groove;
+
+    padding: 1em;
+}
+
+a > span,
+a > span > span {
+    color: blue;
+    margin-top: .6em;
+}
+
+a:hover > span,
+a:hover > span > span {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    padding: 1em;
+}
